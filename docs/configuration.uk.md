@@ -100,7 +100,7 @@
 
 ## 5. AI, мова та часовий пояс
 
-- `ai.model` — модель Cloudflare Workers AI; модель має бути доступною у вашому акаунті.
+- `ai.model` — модель, яка викликається через Cloudflare AI binding. За замовчуванням **`openai/gpt-6-luna` (GPT-6 Luna)**. Для зовнішньої моделі можуть застосовуватися окремі умови тарифікації; перевірте доступність у своєму Cloudflare-акаунті.
 - `ai.dailyEvaluationLimit` і `ai.dailyProspectLimit` — денні обмеження на AI-оцінювання.
 - `notifications.language` — мова повідомлень, якщо її підтримує відповідний сценарій.
 - `notifications.timezone` — часовий пояс для частини часових інтервалів і повідомлень; приклад: `Europe/Warsaw`.

@@ -30,6 +30,7 @@ const pkg=JSON.parse(readFileSync("package.json","utf8"));
 const wrangler=JSON.parse(readFileSync("wrangler.jsonc","utf8"));
 const example=readFileSync(".env.example","utf8");
 const readme=readFileSync("README.md","utf8");
+assert.equal(JSON.parse(readFileSync("config/radar.config.example.json","utf8")).ai.model,"openai/gpt-6-luna","public example must preserve the affordable production model");
 assert.equal(pkg.scripts.build,"npm run config:generate");
 assert.equal(pkg.scripts.deploy,"node scripts/deploy-cloudflare.mjs");
 assert.equal(wrangler.workers_dev,true);

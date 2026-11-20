@@ -49,7 +49,7 @@ If the hub is absent, `onUnavailable` is `"skip_optional_sources"`: DOU/Reddit b
 
 ## AI, Telegram and secrets
 
-`ai.model` selects a Cloudflare Workers AI model ID. Different models may need specific response-format handling and require staging testing. `notifications.telegramEnabled` controls send capability; `app.publicBaseUrl` is your own absolute Worker URL, never another user's. `notifications.timezone`, `language` and `telegramDigestHours` control display and digest timing.
+`ai.model` selects a model through the Cloudflare AI binding. The public default is `openai/gpt-6-luna` (GPT-6 Luna) rather than `@cf/openai/gpt-oss-120b`. Different models may need specific response-format handling and require staging testing. `notifications.telegramEnabled` controls send capability; `app.publicBaseUrl` is your own absolute Worker URL, never another user's. `notifications.timezone`, `language` and `telegramDigestHours` control display and digest timing.
 
 Cloudflare tokens, Telegram bot credentials and browser access secrets belong in Cloudflare secret bindings (or ignored `.dev.vars` locally), **not** in JSON. The validator rejects common secret-bearing property names.
 

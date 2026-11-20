@@ -175,7 +175,7 @@
     }
   },
   "ai": {
-    "model": "@cf/openai/gpt-oss-120b",
+    "model": "openai/gpt-6-luna",
     "dailyEvaluationLimit": 160,
     "dailyProspectLimit": 56
   },

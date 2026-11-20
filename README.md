@@ -33,7 +33,7 @@ npm run ci
 npm run build:check
 ```
 
-The user-specific `config/radar.config.json` and compiled `src/config/radar.generated.js` are **ignored by Git**. A fresh checkout builds from the anonymous `config/radar.config.example.json` by default, with three example job sources and browser/PC, Reddit, community and Telegram integrations disabled.
+The user-specific `config/radar.config.json` and compiled `src/config/radar.generated.js` are **ignored by Git**. A fresh checkout builds from the anonymous `config/radar.config.example.json` by default, with three example job sources, default AI model `openai/gpt-6-luna` (GPT-6 Luna), and browser/PC, Reddit, community and Telegram integrations disabled.
 
 ## Configuration overview
 
