@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "generatedFrom": "production-compatible src/app/worker.js at initial modularization",
+  "members": [
+    {
+      "name": "__defProp",
+      "path": "src/platform/function-names.js",
+      "sha256": "cda030f109e7269529567b0f1d38d339f151936c0644db59d47e89620036e2ec"
+    },
+    {
+      "name": "__name",
+      "path": "src/platform/function-names.js",
+      "sha256": "a0e732eaeee119185bf26a3fbaf784dcf20aab477c69d7c9e0ad40ba62df9996"
+    },
+    {
+      "name": "sourceDate",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "9d1589631cea8c13c72bd949e3aa74cb0aa14a7de6aa804a93ee69392e32afca"
+    },
+    {
+      "name": "locations",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "fe0f621fcbe3a88466799a609bd98f8c6139c3032a639854fb32c68c8fc9045d"
+    },
+    {
+      "name": "REJECT",
+      "path": "src/features/jobs/job-preselect.js",
+      "sha256": "858e514742b40248b7ba3edf407bfe84b929c59426a1d7fe0e3b119b9f5b603c"
+    },
+    {
+      "name": "SELLER",
+      "path": "src/features/jobs/job-preselect.js",
+      "sha256": "56c9264f19eec7697fa3ec5eea807872db857121f82cd08bca58c2c54fc8b217"
+    },
+    {
+      "name": "UNRELATED",
+      "path": "src/features/jobs/job-preselect.js",
+      "sha256": "5698748c01f0c5add2ad8f23c0010c7a24306811e85067a3bde54cd6766a0343"
+    },
+    {
+      "name": "text",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "a311b2f195434d42050038fbf7f553f4fb1aebd34518ad9b1495201c7bb14737"
+    },
+    {
+      "name": "esc",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "f70085044963c2c7d268f8d948345bf0ed6780c456b4c99f218bf5414d8a4771"
+    },
+    {
+      "name": "tag",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "02daf5614280711486cd386f958f05df45ce9973736677020f80eb26d0fc5bc9"
+    },
+    {
+      "name": "iso",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "802ff179014866519686f72f945428574d6fac4805ffcad4d006be6522e4f00b"
+    },
+    {
+      "name": "kyiv",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "f523c4a8ab01c8cbbe84db3c0f9a6970d8bf95222bd5e074b5a66ac0ba1138ca"
+    },
+    {
+      "name": "kyivDay",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "8935a687028fcfd8df874a33e4027143a8731c7724ca859208eae029f2f8e4e3"
+    },
+    {
+      "name": "urlClean",
+      "path": "src/platform/runtime-utils.js",
+      "sha256": "561222e0f4a18a90239432d4b25f19a92b7daa828116932f0e4fc4391f70e512"
+    },
+    {
+      "name": "parseRss",
+      "path": "src/features/discovery/source-fetch.js",
+      "sha256": "60b0c076f80f914ad12746c026eb44d1dd39ba22e12ef042e2d223246a3175e8"
+    },
+    {
+      "name": "FH_SCAM",
+      "path": "src/features/jobs/job-preselect.js",
+      "sha256": "1af08aad6e0bf0054a194dfd958373fd3593aa520e47ad053ab2b0e228d417d2"
+    },
+    {
+      "name": "formatTelegramJob",
+      "path": "src/features/delivery/job-renderer.js",
+      "sha256": "c237c0935f2674913ccc6ee60e2ee4b35123b8ea53c992ee53dd4f8750f326e5"
+    },
+    {
+      "name": "radarHealthReport",
+      "path": "src/features/observability/health-service.js",
+      "sha256": "d81fd753edac57f2a44b7529e5873427a14c654565fa46767fec0da6e4f9e6c1"
+    },
+    {
+      "name": "radarCriticalAlert",
+      "path": "src/features/observability/health-service.js",
+      "sha256": "025a9dcf997fae2f48d889ded75bb637a285c1803bb1c489d8e0f2dc9f62a18c"
+    },
+    {
+      "name": "runHourlyHealthAudit",
+      "path": "src/features/observability/health-service.js",
+      "sha256": "cc5a49e781792fe4619eab2383e1c3d27fda753e45332ee3f548ab66ea045805"
+    },
+    {
+      "name": "checkUpworkHealth",
+      "path": "src/features/observability/health-service.js",
+      "sha256": "50413b075d851b1d181899a949a9b1b3eea7805d2ed76cca7a98f8146a32e27b"
+    },
+    {
+      "name": "notifyFreshContract",
+      "path": "src/features/delivery/job-notifications.js",
+      "sha256": "4984eb4a0ea28bb6350ea18457c46a37a56b3aa75576d5e157e836264d8bfdfb"
+    },
+    {
+      "name": "notifyReview",
+      "path": "src/features/delivery/job-notifications.js",
+      "sha256": "fef0c355101b58dc5b3d0193062827cff85be89f84e6aed96b4aa881a234c9cd"
+    },
+    {
+      "name": "notify",
+      "path": "src/features/delivery/job-notifications.js",
+      "sha256": "582f40e91658c1da7d9cf228d99fde0b72bc7501ca309d900e18130fecd21cc6"
+    },
+    {
+      "name": "enc",
+      "path": "src/http/auth.js",
+      "sha256": "d54bd182d9207efd050aea619384d58429969abdd77294e69ae87461061fdbf2"
+    },
+    {
+      "name": "CSS",
+      "path": "src/http/inbox-view.js",
+      "sha256": "bba938445b5c6d743388f55c9c2e47ab6b16f596f1d92269f3e4ef3ab009df83"
+    },
+    {
+      "name": "html",
+      "path": "src/http/inbox-view.js",
+      "sha256": "503c2f9bb4fd674f18cc180247fdc7c9335b92ee8ca79b4cfdf0c39a754c4397"
+    },
+    {
+      "name": "json",
+      "path": "src/http/responses.js",
+      "sha256": "1b1061e518306ff2c0ec69c969270744f1e302eafa3de2c26895dde9d471de8a"
+    },
+    {
+      "name": "inbox",
+      "path": "src/http/inbox-view.js",
+      "sha256": "4b93c75904138c0f0b99d00f491d88b6291bac79823bb4182f1001eb2222ee22"
+    },
+    {
+      "name": "HEADERS",
+      "path": "src/http/responses.js",
+      "sha256": "58833b2dc354c6d1144c8d710c11f3d2d99863d66eee3870ddf4f0ca448015f2"
+    },
+    {
+      "name": "unauthorized",
+      "path": "src/http/responses.js",
+      "sha256": "541a11ee9c2d7d77bfe360d077270be6abf59d77f832c92a2b7c92a29a941032"
+    },
+    {
+      "name": "runProspectTriage",
+      "path": "src/features/prospects/triage-service.js",
+      "sha256": "fa6ce07e77db7ed884cefed0093ea2a325666b84bbb437657c88c085fafce86b"
+    },
+    {
+      "name": "radarTelegramLeads",
+      "path": "src/http/telegram/lead-preview.js",
+      "sha256": "9864e0863d83bf6ba8c3ac388f433ea034f639507f684a2596b7b103edd6ec6a"
+    }
+  ],
+  "handlerBodies": {},
+  "workflowActions": [
+    {
+      "keys": [
+        "hourly_health_audit"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeHourlyHealthAuditAction",
+      "sha256": "01fba1cfbccee5141b7ea6ac519b3bcc83c93f9ac502328b8eae45e4c2928791"
+    },
+    {
+      "keys": [
+        "opportunity_review"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeOpportunityReviewAction",
+      "sha256": "5b230a3743dad97fc29ffd770c970dbaa75db9c101007b84adcd2ef66a59258f"
+    },
+    {
+      "keys": [
+        "opportunity_scorecard"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeOpportunityScorecardAction",
+      "sha256": "d171df153544c6b34df274f725e08db4a273e9f384de4244a6839949e8c8781f"
+    },
+    {
+      "keys": [
+        "opportunity_benchmark_seed"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeOpportunityBenchmarkSeedAction",
+      "sha256": "a248767d14d6e6f55dc47c640acfeb38059de607feb5e94b49b3fa3660f358e0"
+    },
+    {
+      "keys": [
+        "dou_review"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeDouReviewAction",
+      "sha256": "fe0a2e6506f110bb411d63664d37853aeab80f35baa2c573f5b86d99c04c52ce"
+    },
+    {
+      "keys": [
+        "dou_bootstrap"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeDouBootstrapAction",
+      "sha256": "485ba807fef852f715af2ef1e31efeb077726b50b8c68e2e25629c3d69fec440"
+    },
+    {
+      "keys": [
+        "fast_sources"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeFastSourcesAction",
+      "sha256": "aa136cebf56d351473647fddbfa6d8f0668ae32d4d9c1fc50c1ce08e169ebcba"
+    },
+    {
+      "keys": [
+        "hourly_pipeline"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeHourlyPipelineAction",
+      "sha256": "dde617b200d09f87c71fab4eebc67f0a5114f790a67e04e2453186df38c6a85b"
+    },
+    {
+      "keys": [
+        "hourly_recovery"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeHourlyRecoveryAction",
+      "sha256": "ead969a0fcf864f562b3e5ce5f0fe28f9ede463d658aae28a8f232f0c6945da7"
+    },
+    {
+      "keys": [
+        "direct_contact_review",
+        "direct_contact_preview"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeDirectContactReviewAction",
+      "sha256": "28f0790a786efa26366d043770bfc2b209a25e52241ae620a02c8f399c0f6f99"
+    },
+    {
+      "keys": [
+        "actionable_review",
+        "actionable_preview"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeActionableReviewAction",
+      "sha256": "dfa522d699d95830b7f0dbd0590d9d70a5c56749ff57984788f214df9c4917e9"
+    },
+    {
+      "keys": [
+        "manual_leads_review",
+        "manual_leads_preview"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeManualLeadsReviewAction",
+      "sha256": "5f61ec2493c35d2c145ea13f926175071f9f3393bc8cba89d2efb9255663775c"
+    },
+    {
+      "keys": [
+        "eligibility_review",
+        "eligibility_preview"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeEligibilityReviewAction",
+      "sha256": "2581efd75f121ab816cbc12aa19d11069a39bdca76e5a78fd8ee20bd338f74fa"
+    },
+    {
+      "keys": [
+        "source_audit_once"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeSourceAuditOnceAction",
+      "sha256": "df457adca9f46893641126dd33cccb8d36e39f768c78aca2e9eeff8f12403c24"
+    },
+    {
+      "keys": [
+        "community_scan"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeCommunityScanAction",
+      "sha256": "9aba18e3fc7c1e1d0f26dc5acdff7e527eb657dd9d8f11c4c04ecc686a24ed97"
+    },
+    {
+      "keys": [
+        "job_detail_preview"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeJobDetailPreviewAction",
+      "sha256": "decf1573d196fcd3639f7f31f6a48f6a0bf8f3ee609d68a2f3cdc89c94e75867"
+    },
+    {
+      "keys": [
+        "prospect_notify"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeProspectNotifyAction",
+      "sha256": "42b66ef562c9dbc2db0105e47fed5050757bb1883a3e87320023e950a3f26314"
+    },
+    {
+      "keys": [
+        "demand_preview",
+        "demand_digest"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeDemandPreviewAction",
+      "sha256": "ac106c739bf0d8bf9f2aa4f1584d43c7870be7232890fbdf8165b28a2bc18681"
+    },
+    {
+      "keys": [
+        "prospect_triage"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeProspectTriageAction",
+      "sha256": "84245e2523062aefecbc8308a6b63ac647f9d9389b6f4734e4280c7ea81c3df6"
+    },
+    {
+      "keys": [
+        "probe_new_feeds"
+      ],
+      "path": "src/workflows/actions/scheduler.js",
+      "function": "executeProbeNewFeedsAction",
+      "sha256": "6c285f75601ae4104843ffffc84647a22a1a2ec6ee09164e7460e1b9049c5ac1"
+    },
+    {
+      "keys": [
+        "inspect_webhook"
+      ],
+      "path": "src/workflows/actions/telegram.js",
+      "function": "executeInspectWebhookAction",
+      "sha256": "da3e59993787dec4d9df44025bc2a5adb764fba7a01290494c3c0b27cbf91271"
+    },
+    {
+      "keys": [
+        "deliver_verified"
+      ],
+      "path": "src/workflows/actions/telegram.js",
+      "function": "executeDeliverVerifiedAction",
+      "sha256": "07132ef3d3eebf608f31b7b034fa162c2b4907206dd24e225ca7baa33c5e7af3"
+    },
+    {
+      "keys": [
+        "leads_preview"
+      ],
+      "path": "src/workflows/actions/telegram.js",
+      "function": "executeLeadsPreviewAction",
+      "sha256": "1f1400a9e413dc012ba5c91bb811d7a15518493ba52c15789c2b50fabe004515"
+    },
+    {
+      "keys": [
+        "refresh_commands"
+      ],
+      "path": "src/workflows/actions/telegram.js",
+      "function": "executeRefreshCommandsAction",
+      "sha256": "2eebf5a3207b4c5277edf8d05b45afc9afedf8dca2ba6038770f73216bb8370b"
+    },
+    {
+      "keys": [
+        "configure_webhook"
+      ],
+      "path": "src/workflows/actions/telegram.js",
+      "function": "executeConfigureWebhookAction",
+      "sha256": "85d25942ec2424ab90d01f52a21838ed7c61bc5cf01699218df2adb7ae03111f"
+    },
+    {
+      "keys": [
+        "scan"
+      ],
+      "path": "src/workflows/actions/jobs.js",
+      "function": "executeScanAction",
+      "sha256": "1d54edbae4bac2b1b00d0cd8d1bac0e8d0467187fbb3c830107855144fe16351"
+    },
+    {
+      "keys": [
+        "reddit"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeRedditAction",
+      "sha256": "9731823cd3afce4815f5c0edf023f4e9bd41a88b6b5ef50e5dab580d53080721"
+    },
+    {
+      "keys": [
+        "assess_reddit"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeAssessRedditAction",
+      "sha256": "6ef36fc0642e2e51ce4e3f75a94fd7553a4bf16b5bf9e8690844fd6c1707bd71"
+    }
+  ],
+  "retiredSourceNote": "Retired Upwork OAuth/import/notify functions intentionally removed after disabling Upwork; historical SHA-256 evidence remains in pre-cleanup Git commit."
+}

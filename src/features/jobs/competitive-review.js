@@ -1,0 +1,2 @@
+import {RADAR_SETTINGS} from "../../config/radar.generated.js";
+export function highFitFresh(job,bids,now=Date.now()){const d=Date.parse(String(job.published_at||""));return [...RADAR_SETTINGS.jobs.profile.skills,...RADAR_SETTINGS.jobs.criteria.includeKeywords].some(term=>String(term).length>=3&&String(job.title||"").toLowerCase().includes(String(term).toLowerCase()))&&Number(bids)>20&&Number(bids)<=25&&Number(job.score)>=82&&job.engagement==="contract"&&job.geo==="allowed"&&Number.isFinite(d)&&d<=now+3600000&&now-d<36000000;}

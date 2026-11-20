@@ -1,0 +1,206 @@
+{
+  "description": "Declarations intentionally changed to move personal assumptions into ignored configuration, centralize AI budget, and correct runtime delivery. Old SHA-256 hashes retained for audit.",
+  "members": [
+    {
+      "name": "STACK",
+      "path": "src/features/jobs/job-preselect.js",
+      "before": "a416512e5e854cb28a0513869b86f8a798b572c429de279fffa513bccd2f13be",
+      "after": "65ce7c74cdf6fb1dd63563ffde6497701bfe31ee046a9fb077dc4a4112c790d8"
+    },
+    {
+      "name": "fetchSource",
+      "path": "src/features/discovery/source-fetch.js",
+      "before": "d6f0372a2487c38dbd70ec5789b20c98e4b5772998c727d4da50e5acd7cbc885",
+      "after": "f0a4db334bebcd5a89c564c39aae9be14e585e296e6f325c085e924c2c395e2f",
+      "previousReviewedHashes": [
+        "7d3177cf52d371dc21089d7906cd3858137d3252feb7ff88131b041575b2723a",
+        "6267fe84da79e20a414b03e5af96698ede5401ad0743fe5607e9f0377af68e25"
+      ],
+      "reason": "Reuse bounded streaming body reader for Freelancehunt authenticated API; Reviewed public portability and runtime-safety changes"
+    },
+    {
+      "name": "FH_STACK",
+      "path": "src/features/jobs/job-preselect.js",
+      "before": "ea8c91fb3ba02f03c95ed66fb9a3304411acc70f44bc07750e782cce401ace3c",
+      "after": "b1a278eba22b232876fa9f3829b40a6c928f593f2f77eb9a3a431de05184ab41"
+    },
+    {
+      "name": "firstPass",
+      "path": "src/features/jobs/job-preselect.js",
+      "before": "03dd3213597ce684fb15dd6674abdb7e8afc952152a0af2f36fe55ed8d9d6fb9",
+      "after": "4b88f0b8374b90b0acbe0ffc7bc8f41211345e7cda7c5b03b3ccbcf4248a21f3",
+      "previousReviewedHashes": [
+        "ff40280a96d1dd83ae93c696b297768380396ffec7619c3c88982352472bfa65"
+      ],
+      "reason": "Reviewed public portability and runtime-safety changes"
+    },
+    {
+      "name": "collect",
+      "path": "src/features/discovery/job-collector.js",
+      "before": "5ee0eaf662a57807bd298d124d4af608aaa296e9efb2a12f41bcde7bd3983d12",
+      "after": "ae1764e4248d36290dbc4bfcfef651bbdbfac5033d2506bb70ad045fb832c0e1",
+      "previousReviewedHashes": [
+        "c456214955a792fdb7c568cef4cbe1bae782ea245431854e7cb0ff9728b6f62e",
+        "a98f66b29e2845c1c470e3c5f5a14b8965ee459f6f77a75c880f6bf98d911906"
+      ],
+      "reason": "Security and reliability hardening after runtime audit"
+    },
+    {
+      "name": "evalModel",
+      "path": "src/ai/job-evaluation-service.js",
+      "before": "a6358811d078eb45632e3082d7af7c9085c0794eb219c364edf223e7aa6ebabd",
+      "after": "b0241a66c42805310285fd373a26c352e7b80de99d9586132faf90e68e9892b1",
+      "previousReviewedHashes": [
+        "37a3e4b420a0be92242565cd0ec5e9f658b79a01796a7be47ff7e6613ab00a8b"
+      ],
+      "reason": "Reviewed public portability and runtime-safety changes"
+    },
+    {
+      "name": "assessBatch",
+      "path": "src/ai/job-evaluation-service.js",
+      "before": "47a6d33dc914177209ede17d511a4edcd0badea1e23b6906fdc6b9327c347ce2",
+      "after": "eb5ae2ed0de3d14914b4df34e519531fe950b17bcb69f95655e81fa58e301634"
+    },
+    {
+      "name": "assess",
+      "path": "src/ai/job-evaluation-service.js",
+      "before": "0e9559cbf6bbf9291154fb5a70d161c35a210047457a30ff88bcc0f5c9798786",
+      "after": "a75758d5aa659b92bcf20503e991bf7fa7a5a80aaf68d99edf80ef68563dc36d"
+    },
+    {
+      "name": "scan",
+      "path": "src/features/jobs/scan-service.js",
+      "before": "41e093aa1b9464d354a47d2a2ce96db4da3b35749a8bbaa0680dcae0b36a1b2a",
+      "after": "3e624eea86c27456b6b3f2fa10c644bb9c9579f4626cd5b6656ba41b9dd20544"
+    },
+    {
+      "name": "tg",
+      "path": "src/features/delivery/telegram-transport.js",
+      "before": "ce69823ba6744acb5f1e61be9c12bae6a89a6837aa11228ce644f530399578a8",
+      "after": "9f4a6227884565bdb96a80c46f5d4b0f2199ba606966db728026beb878411a0c",
+      "previousReviewedHashes": [
+        "6f4e4b45c70726eb9e89a87e123d73e45f930f2573795ea7f94cb909e1c3e3f3",
+        "9022bdd2b19d565e1e69227b8e5d71e47a5b0b7c3d6804c4401096f9995169d6"
+      ],
+      "reason": "Security and reliability hardening after runtime audit; Reviewed public portability and runtime-safety changes"
+    },
+    {
+      "name": "verifyTelegram",
+      "path": "src/features/delivery/telegram-transport.js",
+      "before": "5058debe9bc0f33165e3a2fde5d61b8a156dd19e3137b307a2fb19d06fc6ba7c",
+      "after": "e8d23dee9bb9a2001d70d720b6c8b1a4d9c1b375dcc2fe8bcdfb3e5146b7d3f9",
+      "previousReviewedHashes": [
+        "50bb9e8985aefa34fb472385689cb088eb0950ca2c9f270198bab02ff6ebc47c"
+      ],
+      "reason": "Security and reliability hardening after runtime audit"
+    },
+    {
+      "name": "testTelegram",
+      "path": "src/features/delivery/telegram-transport.js",
+      "before": "2206feecb2fb2dc50b431b6918416b20da232c6cee571c24f9a27a0a3f86b721",
+      "after": "1f5121c41fb1a29b6e469c6b4e514939e2b049ec0dc690422c0d9479f9464b62"
+    },
+    {
+      "name": "legacyEvaluate",
+      "path": "src/http/legacy-evaluate.js",
+      "before": "37f590cd5c20add068132fc48cf3986dda4120d0c9280a4d8fced27914742ab9",
+      "after": "63c4b9b44a649f31084425fb8d7bf4af0fcbfae06213c361a8eb4a5a24f0624f"
+    },
+    {
+      "name": "PROBE_FEEDS",
+      "path": "src/features/discovery/source-fetch.js",
+      "before": "cc3f488a640c99196ea052deec4d73a4bc86047ee8a3f5a6565a70cc0e27f307",
+      "after": "a706649938d7ccbbfb2871b8981ebe76aefece5d2fb2f27309189322349f2051"
+    },
+    {
+      "name": "TELEGRAM_CMD_BASE",
+      "path": "src/features/delivery/telegram-transport.js",
+      "before": "9bfe55ebc66ec97529b18f0f17e50270afe336dc3ad53ba2398b5cf029c97d22",
+      "after": "4a71a0fef69fbef36afee9dac5ee4f13e46eb3c4e73db773ec7e6be215421850"
+    },
+    {
+      "name": "radarWebhookSecret",
+      "path": "src/features/delivery/telegram-transport.js",
+      "before": "f3165b40106dc88a8ceda36651256dece506634a1be57afd6f3c1a7a76f34dd7",
+      "after": "753ca44997b8f539a721eb76cd07170397fee111ac798930bc3dcb2476c1a3b5"
+    },
+    {
+      "name": "notifyRedditProspects",
+      "path": "src/features/delivery/lead-notifications.js",
+      "before": "8d51dfe8c2785341f9b015cdff1d61683c307ef8369bbed9a8d72399d579885e",
+      "after": "a10903dba66c40d0b612bbe0206a4019783e88d5273cde32c8d2e44a1c9c33f1"
+    },
+    {
+      "name": "notifyRequestedRedditAudit",
+      "path": "src/features/delivery/lead-notifications.js",
+      "before": "d2c8b7956dfbbff129879ebc3d9adbc165ed2625391b3c84058cedf7da0b4b95",
+      "after": "8883171efa8b49e0d990d5e8e7cc7c434b44e69922fd30582ab2ecd15379f476"
+    },
+    {
+      "name": "deliverAllVerified",
+      "path": "src/features/delivery/verified-delivery.js",
+      "before": "a2229bd2af0e1a9650b72d5d854ec6a419bf79e58716cc0fe705a4bb306e6355",
+      "after": "22c81a16e4bc0533e1efbf98df7bfc93e52a887ba523c009096632862ca7e2a5",
+      "previousReviewedHashes": [
+        "9951f32a55ba3ed377fc6d2f055268a6a2d2c3e57e4d730d1c416516acc5082b"
+      ]
+    },
+    {
+      "name": "radarHandleTelegram",
+      "path": "src/http/telegram/command-handler.js",
+      "before": "1004b0231a3088831ea3e0d9a202aca8be1e156f7a3a59abe7b36316ef18f33b",
+      "after": "70e3ac5245f84b86d490d2296c4387781989b9149a54f11524b90e1084b8660a"
+    },
+    {
+      "name": "radarTelegramStatus",
+      "path": "src/http/telegram/status.js",
+      "before": "5601e918c97a321534700af954142840e25433f1f2189ab585ef2ff4f6a00d6e",
+      "after": "9cb23ad38d3d78abe6de39cd73ade8ec99f3d0229efaf6f9fdcba5e6eb8ed72b",
+      "reason": "Use canonical atomic D1 AI budget for Telegram /status instead of obsolete meta counters"
+    },
+    {
+      "name": "sign",
+      "path": "src/http/auth.js",
+      "before": "b866e942055dc9c9067b6119a4cb91c7a6ad07d26a31b47d7e36153f991c062c",
+      "after": "c387362e764c8b30af00c6ac0457885cede7f51341a7edc48ffcc6bcd0ab927f",
+      "reason": "Fail closed when INBOX_PASSWORD is absent"
+    },
+    {
+      "name": "logged",
+      "path": "src/http/auth.js",
+      "before": "8f8f04ec653efbfd0f9f22e5b5e04490dfff724ab8fef4d09bae2f640a1d6e8a",
+      "after": "b4c39aed0bb32e589b22947f629227daa5cfaba17db49435ccd7890e6af59af7",
+      "reason": "Fail closed when INBOX_PASSWORD is absent"
+    }
+  ],
+  "workflowActions": [
+    {
+      "keys": [
+        "community_reply_audit"
+      ],
+      "path": "src/workflows/actions/leads.js",
+      "function": "executeCommunityReplyAuditAction",
+      "before": "8ccf2ea5e1eb47a0da86b45cdf334c46d458d9ebfa03ed484da4b2eb323d98ad",
+      "after": "915a2b7f783a787762de6535e2870cbd190d593809226fdc99f7e5327215e7e6"
+    }
+  ],
+  "handlerBodies": [
+    {
+      "name": "handleFetch",
+      "path": "src/http/router.js",
+      "before": "0eaf02c92813dd5eac37077e28fee4e1b057a16c38653060e48feecce9605ee5",
+      "after": "78e465b80c84c328f8ddbe60188feb353865df59897802fdbc8f860cea228eaf",
+      "previousReviewedHashes": [
+        "fc0d906a3c5816be476a56a467d9a051b64ab6a67b728b85e2522c8e00c4764e",
+        "08dc8614ba667bc045d47d6730a9ff7e131b0328c55f5529a3ddf84728b44ae8"
+      ],
+      "reason": "Atomic D1 login throttling and read-only Telegram incident diagnostics"
+    },
+    {
+      "name": "scheduled",
+      "path": "src/scheduler/scheduled-handler.js",
+      "before": "9cb2a84cad9f0a4dfe98f877434598988e7602544eb30bcbaa22c84d7d5e1d49",
+      "after": "91874e5c3dfd78aa41c29eef57693393535ea786590dc78925ea8cfb55bebb04"
+    }
+  ]
+}

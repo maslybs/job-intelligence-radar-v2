@@ -1,0 +1,13 @@
+import {strict as assert} from "node:assert";
+import {enrichRedditThreadSnapshot} from "../src/features/reddit/reddit-thread-evidence.js";
+const a={bodyText:"Full Reddit thread text, 2 comments, author states business issue.",nodes:[{text:"Original post heading"}]};
+const b={nodes:[{text:"First actual commenter gives some advice but has not resolved the checkout and payment integration error; author asks for more help."},{text:"First actual commenter gives some advice but has not resolved the checkout and payment integration error; author asks for more help."}]};
+const c={nodes:{items:[{value:{text:"Second commenter discusses an existing fix that the original author says failed in their production CRM; problem remains unresolved."}}]}};
+const snapshot=enrichRedditThreadSnapshot(a,[b,c]);
+assert(snapshot.bodyText.includes("Full Reddit thread text"));
+assert(snapshot.bodyText.includes("First actual commenter"));
+assert(snapshot.bodyText.includes("Second commenter"));
+assert.equal(snapshot.evidence_meta.dom_excerpts,2);
+assert.equal(snapshot.nodes.length,4);
+assert.equal(a.bodyText,"Full Reddit thread text, 2 comments, author states business issue.");
+console.log("PASS Reddit original post and distinct comment DOM excerpts combined without navigation");

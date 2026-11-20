@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "app": {
+    "publicBaseUrl": ""
+  },
+  "jobs": {
+    "enabled": true,
+    "profile": {
+      "role": "Example Platform Engineer",
+      "summary": "Fictional profile for documentation and tests. Replace with your own qualifications before running searches.",
+      "yearsExperience": 2,
+      "skills": [
+        "Go",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "provenExperience": [
+        "Maintained a sample API service"
+      ],
+      "skillsToAvoidOverclaiming": [],
+      "country": "Canada",
+      "timezone": "America/Toronto",
+      "englishLevel": "C1",
+      "preferredHoursPerWeek": 32
+    },
+    "criteria": {
+      "remoteOnly": true,
+      "allowedRegions": [
+        "Worldwide",
+        "Canada"
+      ],
+      "targetMonthlyUsd": 4200,
+      "minMonthlyUsd": 1800,
+      "preferredEngagements": [
+        "fulltime",
+        "contract"
+      ],
+      "preferredRoles": [
+        "Platform Engineer",
+        "Backend Developer"
+      ],
+      "includeKeywords": [
+        "Go",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "excludeKeywords": [],
+      "excludeIndustries": [],
+      "excludeTechnologies": [],
+      "maxAgeDays": 14,
+      "minQualifiedScore": 85,
+      "manualReviewScore": 70,
+      "customInstructions": "",
+      "douMaxAgeDays": 35,
+      "p1Score": 93,
+      "p1EmploymentScore": 97,
+      "contractExceptionScore": 78,
+      "marketplaceMinimums": {}
+    },
+    "sources": {
+      "mode": "replace",
+      "items": [
+        {
+          "name": "Remotive",
+          "kind": "remotive",
+          "hours": 4
+        },
+        {
+          "name": "Himalayas · Full Stack",
+          "kind": "himalayas",
+          "query": "full stack",
+          "hours": 4
+        },
+        {
+          "name": "Jobicy · Engineering",
+          "kind": "jobicy",
+          "params": {
+            "geo": "anywhere",
+            "industry": "engineering"
+          },
+          "hours": 4
+        }
+      ],
+      "probes": [],
+      "inaccessibleHosts": []
+    },
+    "browserSources": {
+      "dou": {
+        "enabled": false,
+        "targets": [
+          {
+            "id": "software-engineer",
+            "query": "Software Engineer",
+            "channel": "employment"
+          },
+          {
+            "id": "backend-engineer",
+            "query": "Backend Engineer",
+            "channel": "employment"
+          }
+        ]
+      }
+    },
+    "directContactSources": []
+  },
+  "leads": {
+    "enabled": false,
+    "profile": {
+      "role": "Example Software Consultant",
+      "valueProposition": "Illustrative technical service offering only",
+      "services": [
+        "API monitoring",
+        "Database maintenance"
+      ],
+      "provenDeliveries": [
+        "Example database maintenance project"
+      ],
+      "idealClientTypes": [
+        "Small software teams"
+      ],
+      "excludedServices": [],
+      "allowedRegions": [
+        "Worldwide"
+      ],
+      "contactStyle": "Helpful public replies, no unsolicited direct messages",
+      "language": "en"
+    },
+    "criteria": {
+      "minTechnicalFit": 70,
+      "minCommercialScore": 80,
+      "requireVerifiedBuyerEvidence": true,
+      "maxAgeDays": 7,
+      "customInstructions": "Find concrete paid business requests; distinguish prospects from ordinary technical help.",
+      "excludeKeywords": []
+    },
+    "sources": {
+      "reddit": {
+        "enabled": false,
+        "expertiseLanes": [],
+        "strongShortQueries": [],
+        "seedSubreddits": [],
+        "seedSearches": [],
+        "intentPhrases": [],
+        "topicPhrases": [],
+        "prioritySubreddits": [],
+        "problemSubreddits": [],
+        "highIntentSubreddits": [],
+        "hiringBoardTerms": [],
+        "deprioritizedCommunityTerms": [],
+        "excludedCommunityTerms": []
+      },
+      "community": {
+        "enabled": false,
+        "feeds": []
+      },
+      "inaccessibleHosts": []
+    }
+  },
+  "integrations": {
+    "oneaihub": {
+      "enabled": false,
+      "browser": {
+        "enabled": false
+      },
+      "computer": {
+        "enabled": false,
+        "allowFilesystem": false,
+        "allowCommands": false
+      },
+      "onUnavailable": "skip_optional_sources",
+      "endpointPath": ""
+    },
+    "dou": {
+      "enabled": false
+    }
+  },
+  "ai": {
+    "model": "@cf/openai/gpt-oss-120b",
+    "dailyEvaluationLimit": 160,
+    "dailyProspectLimit": 56
+  },
+  "notifications": {
+    "language": "en",
+    "timezone": "UTC",
+    "telegramEnabled": false,
+    "telegramDigestHours": [
+      9,
+      18
+    ],
+    "onlyQualified": true,
+    "telegram": {
+      "expectedBotUsername": "",
+      "expectedChatTitle": "",
+      "allowedChatTypes": [
+        "private",
+        "group",
+        "supergroup",
+        "channel"
+      ]
+    }
+  }
+}

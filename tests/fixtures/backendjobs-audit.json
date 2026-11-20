@@ -1,0 +1,32 @@
+[
+  {
+    "id": "syntheticjob001",
+    "title": "Remote Node.js Backend Engineer",
+    "isoDate": "2026-10-21T17:00:00Z",
+    "geoRegions": ",worldwide,",
+    "location": "Worldwide",
+    "author": "Example Company",
+    "contentSnippet": "<p>Build and maintain secure APIs and integrations for a remote product team.</p>",
+    "link": "https://example.com/jobs/backend"
+  },
+  {
+    "id": "syntheticjob002",
+    "title": "API Integration Engineer",
+    "isoDate": "2026-10-21T19:00:00Z",
+    "geoRegions": ",europe,",
+    "location": "Europe",
+    "author": "Sample Product",
+    "contentSnippet": "Build APIs, webhooks and production integrations with business clients.",
+    "link": "https://example.com/jobs/integration"
+  },
+  {
+    "id": "syntheticjob003",
+    "title": "Node.js Backend Engineer",
+    "isoDate": "2026-10-21T20:00:00Z",
+    "geoRegions": ",us,",
+    "location": "United States",
+    "author": "Local Example",
+    "contentSnippet": "Work in the US only.",
+    "link": "https://example.com/jobs/us"
+  }
+]

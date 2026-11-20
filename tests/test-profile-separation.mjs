@@ -1,0 +1,42 @@
+import {strict as assert} from "node:assert";
+import {RADAR_SETTINGS} from "../src/config/radar.generated.js";
+import {buildProfilePrompt} from "../src/ai/profile-context.js";
+import {buildLeadProfilePrompt} from "../src/ai/lead-profile-context.js";
+import {baseSources} from "../src/features/discovery/source-catalog.js";
+import {commercialLeadIsSendable} from "../src/features/prospects/prospect-commercial.js";
+
+const config=structuredClone(RADAR_SETTINGS);
+config.jobs.profile.role="JOB_ROLE_ONLY_726";
+config.jobs.profile.summary="JOB_SUMMARY_ONLY_726";
+config.jobs.criteria.preferredRoles=["JOB_TARGET_ONLY_726"];
+config.leads.profile.role="CLIENT_CONSULTANT_ONLY_726";
+config.leads.profile.valueProposition="CLIENT_VALUE_ONLY_726";
+config.leads.profile.services=["LEAD_SERVICE_ONLY_726"];
+config.leads.criteria.customInstructions="LEAD_PREFERENCE_ONLY_726";
+const jobText=buildProfilePrompt(config).join(" ");
+const leadText=buildLeadProfilePrompt(config).join(" ");
+assert(jobText.includes("JOB_ROLE_ONLY_726"));
+assert(jobText.includes("JOB_TARGET_ONLY_726"));
+assert(!jobText.includes("CLIENT_CONSULTANT_ONLY_726"));
+assert(!jobText.includes("LEAD_SERVICE_ONLY_726"));
+assert(leadText.includes("CLIENT_CONSULTANT_ONLY_726"));
+assert(leadText.includes("LEAD_PREFERENCE_ONLY_726"));
+assert(!leadText.includes("JOB_TARGET_ONLY_726"));
+assert(!leadText.includes("JOB_SUMMARY_ONLY_726"));
+
+const allJobs=baseSources(config);
+assert.deepEqual(allJobs,config.jobs.sources.items);
+assert.notStrictEqual(allJobs,config.jobs.sources.items);
+const sample={category:"paid_request",commercial_intent:"paid_request",fit:82,commercial_score:77,
+ business_signal:1,buyer_evidence_uk:"Original buyer explicitly requested a paid API integration job."};
+config.leads.enabled=true;
+config.leads.criteria.minTechnicalFit=70;
+config.leads.criteria.minCommercialScore=65;
+assert(commercialLeadIsSendable(sample,config));
+config.leads.criteria.minCommercialScore=90;
+assert(!commercialLeadIsSendable(sample,config),"independent lead threshold");
+config.leads.criteria.minCommercialScore=65;
+config.leads.enabled=false;
+assert(!commercialLeadIsSendable(sample,config),"disabled leads cannot be delivered");
+assert.deepEqual(config.jobs.criteria.preferredRoles,["JOB_TARGET_ONLY_726"],"job criteria unaffected");
+console.log("PASS independent job and lead prompts, source config and commercial decisions");

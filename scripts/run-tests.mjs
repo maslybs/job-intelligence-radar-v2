@@ -1,0 +1,11 @@
+import {readdirSync} from "node:fs";
+import {resolve} from "node:path";
+import {spawnSync} from "node:child_process";
+const legacy=process.argv.includes("--legacy");
+const dir=legacy?"tests/legacy":"tests";
+const files=readdirSync(dir).filter(x=>/^test.*\.(?:mjs|cjs)$/.test(x)).sort().map(x=>dir+"/"+x);
+if(!files.length)throw new Error("No tests in "+dir);
+console.log("Running "+files.length+(legacy?" legacy":" active")+" offline tests");
+const run=spawnSync(process.execPath,["--import",resolve("scripts/offline-tests.mjs"),"--test",...files],{stdio:"inherit",env:{...process.env,NODE_ENV:"test"},timeout:60000});
+if(run.error)console.error(run.error.message);
+process.exitCode=run.status===0?0:1;

@@ -1,0 +1,26 @@
+node_modules/
+.wrangler/
+coverage/
+dist/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
+*.secret
+*.pem
+*.key
+*.p12
+*.sqlite
+*.db
+*.log
+.DS_Store
+archive/*.map
+*_local.json
+
+# Personal profile, private source lists, compiled settings
+config/radar.config.json
+src/config/radar.generated.js
+
+# Local migration evidence; never publish historical account settings, source snapshots or deploy scripts
+.local-migration/

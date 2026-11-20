@@ -1,0 +1,44 @@
+// LOCAL DEVELOPMENT ONLY. DO NOT DEPLOY until separate staging resources are provisioned.
+{
+  "name": "job-intelligence-radar-v2-local",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-22",
+  "workers_dev": false,
+  "ai": {
+    "binding": "AI"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": []
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "job-intelligence-radar-v2-LOCAL-ONLY",
+      "database_id": "00000000-0000-4000-8000-000000000000"
+    }
+  ],
+  "workflows": [
+    {
+      "binding": "REDDIT_MCP_WORKFLOW",
+      "name": "job-radar-v2-local-reddit",
+      "class_name": "RedditMcpWorkflow"
+    },
+    {
+      "binding": "MANUAL_RADAR_WORKFLOW",
+      "name": "job-radar-v2-local-manual",
+      "class_name": "ManualRadarWorkflow"
+    },
+    {
+      "binding": "DOU_BROWSER_WORKFLOW",
+      "name": "job-radar-v2-local-dou",
+      "class_name": "DouBrowserWorkflow"
+    }
+  ],
+  "vars": {
+    "REDDIT_MCP_ENABLED": "0",
+    "DOU_BROWSER_ENABLED": "0"
+  }
+}

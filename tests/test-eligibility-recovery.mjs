@@ -1,0 +1,11 @@
+import {strict as assert} from "node:assert";
+import {pickEligibilityReview,renderEligibilityReview} from "../src/features/jobs/eligibility-review.js";
+import {hourlyRecoveryNeeded} from "../src/features/scheduler/hourly-recovery.js";
+const x={id:"a",title:"AI Engineer",source:"Djinni",url:"https://djinni.co/jobs/123",priority:"P2",score:94,geo:"unknown",engagement:"unknown",kind:"buyer",reason:"Production backend integration opportunity",region:"",description:"AI agents and API integrations"};
+const r=pickEligibilityReview([x,{...x,id:"b",title:"US only",url:"https://djinni.co/jobs/us-only",score:99},{...x,id:"c",geo:"allowed"}]);
+assert.deepEqual(r.map(y=>y.id),["a"]);
+assert(renderEligibilityReview(r,"2026-10-23").includes("НЕ підтверджені вакансії"));
+const now=Date.parse("2026-10-23T01:20:00Z");
+assert(hourlyRecoveryNeeded("2026-10-22T23:00:00Z",now));
+assert(!hourlyRecoveryNeeded("2026-10-23T00:35:00Z",now));
+console.log("PASS geo review and hourly fallback");

@@ -1,0 +1,17 @@
+import {strict as assert} from "node:assert";
+import {readFileSync} from "node:fs";
+import {canonicalJobUrl} from "../src/features/discovery/canonical-job-url.js";
+import {sha} from "../src/platform/hash.js";
+const first=canonicalJobUrl("https://jobs.example.com/roles/100?utm_source=mail&id=2#apply");
+const same=canonicalJobUrl("https://jobs.example.com/roles/100?id=2&utm_campaign=another");
+const distinct=canonicalJobUrl("https://jobs.example.com/roles/101?id=2");
+assert.equal(first,same,"tracking parameters and fragments ignored");
+assert.notEqual(first,distinct,"same title and host must not collapse distinct URLs");
+assert.notEqual(await sha(first),await sha(distinct));
+assert.equal(canonicalJobUrl("https://example.com/jobs?job_id=200&ref=source").includes("job_id=200"),true);
+assert.throws(()=>canonicalJobUrl("javascript:alert(1)"),/protocol/);
+const collector=readFileSync("src/features/discovery/job-collector.js","utf8");
+assert(collector.includes("canonicalJobUrl(j.url)"));
+assert(!collector.includes("id=? OR fingerprint=?"),"content fingerprints cannot suppress real postings");
+assert(collector.includes("INSERT OR IGNORE INTO jobs"),"database enforces atomic URL/PK uniqueness");
+console.log("PASS canonical URL identity, tracking cleanup and no content-based suppression");

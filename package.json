@@ -1,0 +1,33 @@
+{
+  "name": "job-intelligence-radar-v2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare job intelligence radar — isolated modular migration",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "test:all": "node scripts/run-tests.mjs",
+    "build:check": "npx --no-install wrangler deploy --dry-run --outdir .wrangler/build-check",
+    "status": "git status --short",
+    "ci": "npm run check && npm run check:architecture && npm test",
+    "config:generate": "node scripts/generate-config.mjs",
+    "config:validate-public": "node scripts/generate-config.mjs --validate-example",
+    "precheck": "npm run config:generate",
+    "pretest": "npm run config:generate",
+    "prebuild:check": "npm run config:generate",
+    "setup": "node scripts/setup.mjs",
+    "audit:public": "node scripts/audit-public.mjs",
+    "check:architecture": "node scripts/check-architecture.mjs",
+    "pretest:runtime": "npm run config:generate && npm run build:check",
+    "test:runtime": "node scripts/runtime-smoke.mjs"
+  },
+  "devDependencies": {
+    "acorn": "8.18.0",
+    "miniflare": "4.20260426.0",
+    "wrangler": "4.86.0"
+  }
+}
