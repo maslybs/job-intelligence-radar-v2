@@ -1,5 +1,8 @@
 # Configuration guide
 
+**Language / Мова:** **English** | [Українська](configuration.uk.md)
+[English README](../README.md) | [Ukrainian setup](one-click.uk.md) | [Ukrainian usage](usage.uk.md)
+
 Use `npm run setup` to copy the public example to `config/radar.config.json`. Edit that private file and run `npm run ci`. Configuration schema version **2** deliberately separates employee-job matching from consulting/client prospecting.
 
 ## Jobs: looking for employment

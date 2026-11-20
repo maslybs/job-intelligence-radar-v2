@@ -1,5 +1,7 @@
 # Job Intelligence Radar
 
+**Language / Мова:** **English** | [Українська](README.uk.md)
+
 A configurable job and potential-client discovery radar built for Cloudflare Workers, D1, Workflows and Workers AI.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/maslybs/job-intelligence-radar-v2)

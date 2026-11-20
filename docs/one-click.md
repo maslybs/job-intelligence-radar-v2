@@ -1,5 +1,8 @@
 # Deploy to Cloudflare (no terminal required)
 
+**Language / Мова:** **English** | [Українська](one-click.uk.md)
+[English README](../README.md) | [Ukrainian setup](one-click.uk.md)
+
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/maslybs/job-intelligence-radar-v2)
 
 This creates **your own** Worker, D1 database, and linked Git repository. Nothing points to the maintainer's Cloudflare resources, database, Telegram bot or personal profile. Cloudflare provisions D1 and Workers AI; Wrangler deploys the three Workflow classes.
