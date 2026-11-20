@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Cloudflare job intelligence radar — isolated modular migration",
+  "description": "Self-hostable job and client-lead discovery radar for Cloudflare Workers, D1 and Workers AI",
   "engines": {
     "node": ">=20"
   },
@@ -23,11 +23,23 @@
     "audit:public": "node scripts/audit-public.mjs",
     "check:architecture": "node scripts/check-architecture.mjs",
     "pretest:runtime": "npm run config:generate && npm run build:check",
-    "test:runtime": "node scripts/runtime-smoke.mjs"
+    "test:runtime": "node scripts/runtime-smoke.mjs",
+    "build": "npm run config:generate",
+    "deploy": "node scripts/deploy-cloudflare.mjs"
   },
   "devDependencies": {
     "acorn": "8.18.0",
     "miniflare": "4.20260426.0",
     "wrangler": "4.86.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "INBOX_PASSWORD": {
+        "description": "**Recommended:** choose a unique strong password (at least 16 characters) for your Radar Inbox. The browser interface stays locked until this secret is configured. Do not use your GitHub or Cloudflare password."
+      },
+      "ADMIN_TOKEN": {
+        "description": "**Recommended:** a separate randomly generated token for administrative API calls. Never commit it to GitHub or share it publicly. In terminal use `openssl rand -hex 32` to generate one."
+      }
+    }
   }
 }

@@ -1,6 +1,5 @@
 -- Fresh-install schema for a new, independent Cloudflare D1 database.
 -- No user data, historical records, account identifiers, or credentials.
-PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS meta (
   key TEXT PRIMARY KEY NOT NULL,
   value TEXT NOT NULL

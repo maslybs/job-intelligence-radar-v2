@@ -14,10 +14,18 @@ for(const file of files){
   }
 }
 const cfg=JSON.parse(readFileSync("wrangler.jsonc","utf8").replace(/^\s*\/\/.*$/gm,""));
-if(cfg.name==="job-intelligence-radar-luna")problems.push("production Worker name must not be used");
-if(cfg.workers_dev!==false)problems.push("workers_dev must stay disabled in the migration configuration");
-if((cfg.triggers?.crons||[]).length)problems.push("migration Cron triggers must stay disabled");
-if(cfg.d1_databases?.some(d=>d.database_id!=="00000000-0000-4000-8000-000000000000"))problems.push("production D1 binding detected in development config");
-if(cfg.vars?.REDDIT_MCP_ENABLED!=="0"||cfg.vars?.DOU_BROWSER_ENABLED!=="0")problems.push("automation-enabled development environment");
+// Public template must never reuse an existing personal/production Worker or D1.
+// The limited hourly Cron is intentional; high-frequency and private bridges stay off.
+if(cfg.name!=="job-intelligence-radar-starter")problems.push("unexpected public template Worker name");
+if(cfg.workers_dev!==true)problems.push("public install must expose a workers.dev URL");
+if(JSON.stringify(cfg.triggers?.crons)!==JSON.stringify(["0 * * * *"]))
+  problems.push("public template must use only the hourly scan");
+const databases=cfg.d1_databases||[];
+if(databases.length!==1||databases[0].binding!=="DB"||
+   databases[0].database_name!=="job-intelligence-radar-starter-db"||
+   Object.hasOwn(databases[0],"database_id"))
+  problems.push("public template must auto-provision its own D1, without an existing database ID");
+if(cfg.vars?.REDDIT_MCP_ENABLED!=="0"||cfg.vars?.DOU_BROWSER_ENABLED!=="0")
+  problems.push("private browser integrations must default to disabled");
 console.log(JSON.stringify({files_checked:files.length,source_files:walk("src").length,test_files:walk("tests").length,problems},null,2));
 if(problems.length)process.exitCode=1;

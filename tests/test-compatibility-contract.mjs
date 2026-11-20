@@ -23,10 +23,12 @@ for(const name of ["ManualRadarWorkflow","RedditMcpWorkflow","DouBrowserWorkflow
  assert(entry.includes(name),"cloudflare export missing: "+name);
  assert(cfg.workflows.some(x=>x.class_name===name),"local Workflow spec missing: "+name);
 }
-assert.equal(cfg.triggers.crons.length,0);
-assert.equal(cfg.workers_dev,false);
-assert.equal(cfg.d1_databases[0].database_id,"00000000-0000-4000-8000-000000000000");
+assert.deepEqual(cfg.triggers.crons,["0 * * * *"]);
+assert.equal(cfg.workers_dev,true);
+assert.equal(cfg.d1_databases[0].binding,"DB");
+assert.equal(cfg.d1_databases[0].database_name,"job-intelligence-radar-starter-db");
+assert.equal(cfg.d1_databases[0].database_id,undefined);
 assert(RADAR_SETTINGS.jobs.profile.role);
 assert(RADAR_SETTINGS.leads.profile.role);
 assert.notEqual(RADAR_SETTINGS.jobs.profile,RADAR_SETTINGS.leads.profile);
-console.log("PASS legacy route/cron/export contract retained with safe local deployment settings");
+console.log("PASS legacy route/cron/export contract retained with isolated public template resources");

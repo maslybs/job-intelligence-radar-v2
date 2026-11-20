@@ -5,7 +5,16 @@ const examplePath = resolve("config/radar.config.example.json");
 const privatePath = resolve(process.env.RADAR_CONFIG_FILE || "config/radar.config.json");
 const output = resolve("src/config/radar.generated.js");
 const validateOnly = process.argv.includes("--validate-example");
-const raw = JSON.parse(readFileSync(validateOnly ? examplePath : (existsSync(privatePath) ? privatePath : examplePath), "utf8"));
+// RADAR_CONFIG_JSON is an optional private *build-time* setting for Workers
+// Builds. Never commit it or echo it in CI logs. Public example validation
+// always ignores private overrides.
+const inlinePrivate=!validateOnly&&typeof process.env.RADAR_CONFIG_JSON==="string"&&
+  process.env.RADAR_CONFIG_JSON.length>0;
+const source=inlinePrivate?process.env.RADAR_CONFIG_JSON:
+  readFileSync(validateOnly?examplePath:(existsSync(privatePath)?privatePath:examplePath),"utf8");
+let raw;
+try{raw=JSON.parse(source)}
+catch{throw new Error("Invalid radar configuration JSON (contents suppressed for privacy)")}
 // Compatibility aliases for the legacy Worker. New configuration is always split into jobs/leads.
 // Never allow a lead-specific profile to leak into vacancy evaluations or vice versa.
 const settings = { ...raw,
@@ -218,4 +227,4 @@ if (!validateOnly) {
   mkdirSync(resolve("src/config"), {recursive: true});
   writeFileSync(output, "// Generated locally; ignored by Git. Do not edit by hand.\nexport const RADAR_SETTINGS = Object.freeze(" + JSON.stringify(settings, null, 2) + ");\n");
 }
-console.log(JSON.stringify({valid: true, mode: validateOnly ? "public-example" : (existsSync(privatePath) ? "private" : "public-example"), configured_sources: settings.jobs.sources.items.length, reddit_lanes: settings.leads.sources.reddit.expertiseLanes.length, leads_enabled: settings.leads.enabled, oneaihub_enabled: settings.integrations.oneaihub.enabled, output_generated: !validateOnly}));
+console.log(JSON.stringify({valid: true, mode: validateOnly ? "public-example" : (inlinePrivate ? "private-build-env" : existsSync(privatePath) ? "private" : "public-example"), configured_sources: settings.jobs.sources.items.length, reddit_lanes: settings.leads.sources.reddit.expertiseLanes.length, leads_enabled: settings.leads.enabled, oneaihub_enabled: settings.integrations.oneaihub.enabled, output_generated: !validateOnly}));

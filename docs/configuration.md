@@ -50,6 +50,12 @@ If the hub is absent, `onUnavailable` is `"skip_optional_sources"`: DOU/Reddit b
 
 Cloudflare tokens, Telegram bot credentials and browser access secrets belong in Cloudflare secret bindings (or ignored `.dev.vars` locally), **not** in JSON. The validator rejects common secret-bearing property names.
 
+## Configuring a one-click Cloudflare installation privately
+
+The [Deploy to Cloudflare guide](one-click.md) installs the **fictional** profile by default. For a personal setup managed through Workers Builds, add `RADAR_CONFIG_JSON` as a **build-time secret** containing a complete schema-v2 configuration. The `npm run build` and `npm run deploy` scripts will generate settings from it without adding your CV, salary preferences or private source lists to Git. After editing this build setting, trigger a new build.
+
+This is distinct from runtime Worker secrets like `INBOX_PASSWORD`, `ADMIN_TOKEN` and `TG_BOT_TOKEN`. Do not place credentials inside `RADAR_CONFIG_JSON`. The validator rejects secret-like JSON keys.
+
 ## Validation
 
 ```bash

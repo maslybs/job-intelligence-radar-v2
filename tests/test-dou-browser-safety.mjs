@@ -19,6 +19,6 @@ assert(main.includes('DouBrowserWorkflow'),"Cloudflare still receives DOU export
 assert(schedule.includes('env.DOU_BROWSER_WORKFLOW.create'));
 assert(schedule.includes('scheduledAt.getUTCMinutes()%10===5'));
 assert(!main.includes('["DOU · AI Automation",'));
-assert(wrangler.includes('"job-radar-v2-local-dou"'));
+assert(wrangler.includes('"job-radar-starter-dou"'));
 assert(wrangler.includes('"DOU_BROWSER_ENABLED": "0"'));
 console.log("PASS DOU own-tab cleanup, private MCP, 10-min cron, no direct blocked RSS, active independent Workflow");

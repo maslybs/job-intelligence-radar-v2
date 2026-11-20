@@ -10,7 +10,7 @@ const src=readFileSync('src/scheduler/scheduled-handler.js','utf8');
 const workflow=readFileSync('src/workflows/actions/scheduler.js','utf8');
 const collector=readFileSync('src/features/discovery/job-collector.js','utf8');
 const cfg=readFileSync("wrangler.jsonc",'utf8');
-assert(cfg.includes('"crons": []'), "v2 local must have no production crons");
+assert.deepEqual(JSON.parse(cfg).triggers.crons,["0 * * * *"],"public template only schedules hourly scans");
 assert(src.includes('if(event.cron===\"*/5 * * * *\")'));
 assert(src.includes("fast_cron_last_scheduled"));
 assert(workflow.includes('()=>scan(env,false,{mode:\"fast\"})'));
